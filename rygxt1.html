@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+    <meta charset="utf-8">
+    <!-- 引入 ECharts 文件 -->
+    <script src="echarts.js"></script>
+</head>
+<body style="height: 100%;">
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="height: 100%;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+      
+
+var option = {
+
+    backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
+
+        offset: 0,
+
+        color: '#f7f8fa'
+
+    }, {
+
+        offset: 1,
+
+        color: '#cdd0d5'
+
+    }]),
+
+    title: {
+
+        text: "乳饮关系图",
+
+        subtext: "生产处-线别-工厂",
+
+        top: "top",
+
+        left: "center"
+
+    },
+
+    tooltip: {},
+
+    legend: [{
+
+        formatter: function(name) {
+
+            return echarts.format.truncateText(name, 60, '14px Microsoft Yahei', '…');
+
+        },
+
+        tooltip: {
+
+            show: true
+
+        },
+
+        selectedMode: 'true',
+
+        bottom: 20,
+
+        data: ['管状线16', '管状开心线4', 'PET线4', '口袋包线5', '乳原11', '利乐A3线9', '利乐A3-190线3', '利乐TBA线9', '利乐晶线1', '冷链线1', '铁罐线9', '酒品2']
+
+    }],
+
+    toolbox: {
+
+        show: true,
+
+        feature: {
+
+            dataView: {
+
+                show: true,
+
+                readOnly: true
+
+            },
+
+            restore: {
+
+                show: true
+
+            },
+
+            saveAsImage: {
+
+                show: true
+
+            }
+
+        }
+
+    },
+
+    animationDuration: 3000,
+
+    animationEasingUpdate: 'quinticInOut',
+
+    series: [{
+
+        name: '乳饮生产处',
+
+        type: 'graph',
+
+        layout: 'force',
+
+
+
+        force: {
+
+            repulsion: 3000
+
+        },
+
+        data: [{
+
+            "name": "乳饮生产处",
+
+            // "x": 0,
+
+            // y: 0,
+
+            "symbolSize": 80,
+
+
+            "itemStyle": {
+                "normal": {
+                    "color": "#FFB90F"
+                }
+            },
+
+            "draggable": "true",
+
+            "value": 12
+
+        }, {
+
+            "name": "管状线16",
+
+            "value": 16,
+
+            "symbolSize": 40,
+
+            "category": "管状线16",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "管状开心线4",
+
+            "value": 4,
+
+            "symbolSize": 40,
+
+            "category": "管状开心线4",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "PET线4",
+
+            "value": 4,
+
+            "symbolSize": 40,
+
+            "category": "PET线4",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "口袋包线5",
+
+            "value": 5,
+
+            "symbolSize": 40,
+
+            "category": "口袋包线5",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "乳原11",
+
+            "value": 11,
+
+            "symbolSize": 40,
+
+            "category": "乳原11",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "利乐A3线9",
+
+            "value": 9,
+
+            "symbolSize": 40,
+
+            "category": "利乐A3线9",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "利乐A3-190线3",
+
+            "value": 3,
+
+            "symbolSize": 40,
+
+            "category": "利乐A3-190线3",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "利乐TBA线9",
+
+            "value": 9,
+
+            "symbolSize": 40,
+
+            "category": "利乐TBA线9",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "利乐晶线1",
+
+            "value": 1,
+
+            "symbolSize": 40,
+
+            "category": "利乐晶线1",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "冷链线1",
+
+            "value": 1,
+
+            "symbolSize": 40,
+
+            "category": "冷链线1",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "铁罐线9",
+
+            "value": 9,
+
+            "symbolSize": 40,
+
+            "category": "铁罐线9",
+            "itemStyle": {
+                "normal": {
+                    "color": "#CD5B45"
+                }
+            },
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "酒品2",
+
+            "value": 2,
+
+            "symbolSize": 40,
+
+            "category": "酒品2",
+            "itemStyle": {
+                "normal": {
+                    "color": "#FFB6C1"
+                }
+            },
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "杭州总厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "管状线16",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "山东总厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "管状线16",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "湖南总厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "管状线16",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "哈尔滨旺旺",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "管状线16",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "广西总厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "管状线16",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "长春旺旺",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "管状线16",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "安庆总厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "管状线16",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "漯河厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "管状线16",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "江西总厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "管状线16",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "新疆厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "管状线16",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "西宁旺旺",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "管状线16",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "沈阳总厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "管状线16",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "隆昌厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "管状线16",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "铜川总厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "管状线16",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "淮安总厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "管状线16",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "泉州厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "管状线16",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "浙江总厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "乳原11",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "南京总厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "铁罐线9",
+            "itemStyle": {
+                "normal": {
+                    "color": "#CD5B45"
+                }
+            },
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "湖北总厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "口袋包线5",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "广州总厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "乳原11",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "石家庄明旺",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "乳原11",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "成都总厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "乳原11",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "萨拉齐",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "乳原11",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "宁夏明旺",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "乳原11",
+
+            "draggable": "true"
+
+        }, {
+
+            "name": "北京总厂",
+
+            "value": 1,
+
+            "symbolSize": 20,
+
+            "category": "铁罐线9",
+            "itemStyle": {
+                "normal": {
+                    "color": "#CD5B45"
+                }
+            },
+
+            "draggable": "true"
+
+
+
+        }],
+
+        links: [{
+
+            "source": "乳饮生产处",
+
+            "target": "管状线16"
+
+        }, {
+
+            "source": "乳饮生产处",
+
+            "target": "管状开心线4"
+
+        }, {
+
+            "source": "乳饮生产处",
+
+            "target": "PET线4"
+
+        }, {
+
+            "source": "乳饮生产处",
+
+            "target": "口袋包线5"
+
+        }, {
+
+            "source": "乳饮生产处",
+
+            "target": "乳原11"
+
+        }, {
+
+            "source": "乳饮生产处",
+
+            "target": "利乐A3线9"
+
+        }, {
+
+            "source": "乳饮生产处",
+
+            "target": "利乐A3-190线3"
+
+        }, {
+
+            "source": "乳饮生产处",
+
+            "target": "利乐TBA线9"
+
+        }, {
+
+            "source": "乳饮生产处",
+
+            "target": "利乐晶线1"
+
+        }, {
+
+            "source": "乳饮生产处",
+
+            "target": "冷链线1"
+
+        }, {
+
+
+
+            "source": "乳饮生产处",
+
+            "target": "铁罐线9"
+
+        }, {
+
+            "source": "乳饮生产处",
+
+            "target": "酒品2"
+
+
+        }, {
+
+            "target": "杭州总厂",
+
+            "source": "管状线16",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "山东总厂",
+
+            "source": "管状线16",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "湖南总厂",
+
+            "source": "管状线16",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "哈尔滨旺旺",
+
+            "source": "管状线16",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "广西总厂",
+
+            "source": "管状线16",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "长春旺旺",
+
+            "source": "管状线16",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "安庆总厂",
+
+            "source": "管状线16",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "漯河厂",
+
+            "source": "管状线16",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "江西总厂",
+
+            "source": "管状线16",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "新疆厂",
+
+            "source": "管状线16",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "西宁旺旺",
+
+            "source": "管状线16",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "沈阳总厂",
+
+            "source": "管状线16",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "隆昌厂",
+
+            "source": "管状线16",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "铜川总厂",
+
+            "source": "管状线16",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "淮安总厂",
+
+            "source": "管状线16",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "泉州厂",
+
+            "source": "管状线16",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "安庆总厂",
+
+            "source": "管状开心线4",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "漯河厂",
+
+            "source": "管状开心线4",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "隆昌厂",
+
+            "source": "管状开心线4",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "淮安总厂",
+
+            "source": "管状开心线4",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "山东总厂",
+
+            "source": "PET线4",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "安庆总厂",
+
+            "source": "PET线4",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "浙江总厂",
+
+            "source": "PET线4",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "南京总厂",
+
+            "source": "PET线4",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "山东总厂",
+
+            "source": "口袋包线5",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "湖北总厂",
+
+            "source": "口袋包线5",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "淮安总厂",
+
+            "source": "口袋包线5",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "广西总厂",
+
+            "source": "口袋包线5",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "江西总厂",
+
+            "source": "口袋包线5",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "浙江总厂",
+
+            "source": "乳原11",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "广州总厂",
+
+            "source": "乳原11",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "山东总厂",
+
+            "source": "乳原11",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "石家庄明旺",
+
+            "source": "乳原11",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "湖南总厂",
+
+            "source": "乳原11",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "淮安总厂",
+
+            "source": "乳原11",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "安庆总厂",
+
+            "source": "乳原11",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "成都总厂",
+
+            "source": "乳原11",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "新疆厂",
+
+            "source": "乳原11",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "萨拉齐",
+
+            "source": "乳原11",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "宁夏明旺",
+
+            "source": "乳原11",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "安庆总厂",
+
+            "source": "利乐A3线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "广州总厂",
+
+            "source": "利乐A3线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "淮安总厂",
+
+            "source": "利乐A3线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "山东总厂",
+
+            "source": "利乐A3线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "浙江总厂",
+
+            "source": "利乐A3线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "广西总厂",
+
+            "source": "利乐A3线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "成都总厂",
+
+            "source": "利乐A3线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "长春旺旺",
+
+            "source": "利乐A3线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "湖南总厂",
+
+            "source": "利乐A3线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "山东总厂",
+
+            "source": "利乐A3-190线3",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "广西总厂",
+
+            "source": "利乐A3-190线3",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "北京总厂",
+
+            "source": "利乐A3-190线3",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "浙江总厂",
+
+            "source": "利乐TBA线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "湖南总厂",
+
+            "source": "利乐TBA线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "广州总厂",
+
+            "source": "利乐TBA线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "山东总厂",
+
+            "source": "利乐TBA线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "成都总厂",
+
+            "source": "利乐TBA线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "北京总厂",
+
+            "source": "利乐TBA线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "石家庄明旺",
+
+            "source": "利乐TBA线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "淮安总厂",
+
+            "source": "利乐TBA线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "铜川总厂",
+
+            "source": "利乐TBA线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "北京总厂",
+
+            "source": "利乐晶线1",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "南京总厂",
+
+            "source": "冷链线1",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "浙江总厂",
+
+            "source": "铁罐线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "北京总厂",
+
+            "source": "铁罐线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "成都总厂",
+
+            "source": "铁罐线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "广州总厂",
+
+            "source": "铁罐线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "淮安总厂",
+
+            "source": "铁罐线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "南京总厂",
+
+            "source": "铁罐线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "山东总厂",
+
+            "source": "铁罐线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "安庆总厂",
+
+            "source": "铁罐线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "湖南总厂",
+
+            "source": "铁罐线9",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "沈阳总厂",
+
+            "source": "酒品2",
+
+
+
+
+
+
+
+        }, {
+
+            "target": "杭州总厂",
+
+            "source": "酒品2",
+
+
+
+
+
+        }],
+
+        categories: [{
+
+            'name': '管状线16'
+
+        }, {
+
+            'name': '管状开心线4'
+
+        }, {
+
+            'name': 'PET线4'
+
+        }, {
+
+            'name': '口袋包线5'
+
+        }, {
+
+            'name': '乳原11'
+
+        }, {
+
+            'name': '利乐A3线9'
+
+        }, {
+
+            'name': '利乐A3-190线3'
+
+        }, {
+
+            'name': '利乐TBA线9'
+
+        }, {
+
+            'name': '利乐晶线1'
+
+        }, {
+
+            'name': '冷链线1'
+
+        }, {
+
+            'name': '铁罐线9',
+            "itemStyle": {
+                "normal": {
+                    "color": "#CD5B45"
+                }
+            },
+
+        }, {
+
+            'name': '酒品2',
+            "itemStyle": {
+                "normal": {
+                    "color": "#FFB6C1"
+                }
+            }
+
+        }],
+
+        focusNodeAdjacency: true,
+
+        roam: true,
+
+        label: {
+
+            normal: {
+
+
+
+                show: true,
+
+                position: 'top',
+
+
+
+            }
+
+        },
+
+        lineStyle: {
+
+            normal: {
+
+                color: 'source',
+
+                curveness: 0,
+
+                type: "solid"
+
+            }
+
+        }
+
+    }]
+
+};
+
+
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
